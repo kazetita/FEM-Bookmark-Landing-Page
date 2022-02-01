@@ -1,0 +1,14 @@
+:root {
+  --fs-400: 0.9375rem;
+  --fs-500: 1.5rem;
+  --fs-600: 1.875rem;
+  --fw-normal: 400;
+  --fw-bold: 500;
+}
+@media screen and (min-width: 64rem) {
+  :root {
+    --fs-400: 1.125rem;
+    --fs-500: 2rem;
+    --fs-600: 3rem;
+  }
+}

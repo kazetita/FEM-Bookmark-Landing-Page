@@ -1,0 +1,15 @@
+@use 'mixins' as *;
+
+:root{
+  --fs-400: 15px;
+  --fs-500: 24px;
+  --fs-600: 30px;
+  --fw-normal: 400;
+  --fw-bold: 500;
+
+  @include mq('lg') {
+    --fs-400: 18px;
+    --fs-500: 32px;
+    --fs-600: 48px;
+  }
+}
