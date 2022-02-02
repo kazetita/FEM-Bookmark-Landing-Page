@@ -1,0 +1,21 @@
+@use '../utils' as *;
+.menu {
+  /* stylelint-disable-next-line */
+  @util reset-list;
+  display: flex;
+  gap: var(--menu-gap-items, 46px);
+  font-size: var(--menu-fs, 13px);
+  text-transform: uppercase;
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    letter-spacing: var(--menu-ls, 1.5px);
+    color: var(--menu-clr, var(--clr-neutral-500));
+
+    &:hover,
+    &:focus{
+      color: var(--menu-clr-hover, var(--clr-primary-500));
+    }
+  }
+}

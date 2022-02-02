@@ -1,0 +1,10 @@
+@use '../utils' as *;
+
+.container {
+  max-width: var(--max-width);
+  // padding-inline: 170px;
+  padding-left: 170px;
+  padding-right: 155px;
+  margin-inline: auto;
+}
+

@@ -1,4 +1,12 @@
+@use '../utils/mixins' as *;
+
 .u-sr-only {
   /* stylelint-disable-next-line */
   @util hide-visually;
+}
+
+.u-sm-only {
+  @include mq("lg") {
+    display: none;
+  }
 }
