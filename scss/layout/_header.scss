@@ -1,3 +1,9 @@
+@use '../utils/mixins' as *;
+
 .header {
-  padding-block: 56px;
+  padding-block: 40px;
+  
+  @include mq("lg") {
+    padding-block: 56px;
+  }
 }

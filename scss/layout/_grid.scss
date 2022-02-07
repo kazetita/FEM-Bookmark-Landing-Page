@@ -1,10 +1,14 @@
-@use '../utils' as *;
+@use '../utils/mixins' as *;
 
 .container {
   max-width: var(--max-width);
-  // padding-inline: 170px;
-  padding-left: 170px;
-  padding-right: 155px;
+  padding-inline: 32px;
   margin-inline: auto;
+
+  @include mq("lg") {
+    // padding-inline: 170px;
+    padding-left: 170px;
+    padding-right: 155px;
+  }
 }
 

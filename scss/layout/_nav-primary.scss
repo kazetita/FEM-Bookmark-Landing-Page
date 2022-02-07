@@ -1,7 +1,84 @@
-@use '../utils' as *;
+@use '../utils/mixins' as *;
 
 .nav-primary {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+
+  &__toggle {
+    width: 18px;
+    height: 15px;
+    background-image: url('../images/icon-hamburger.svg');
+    background-repeat: no-repeat;
+    all: unset;
+    cursor: pointer;
+
+    &--open {
+      width: 16px;
+      height: 15px;
+      background-image: url('../images/icon-close.svg');
+    }
+  }
+
+  @include mq("lg", "max") {
+    .menu {
+      --menu-fs: 20px;
+      --menu-ls: 2.4px;
+      --menu-gap-items: 0;
+      --menu-clr: #fff;
+      margin-top: 32px;
+
+      &__item {
+        border-top: 1px solid var(--clr-neutral-400);
+      }
+
+      &__link.btn {
+        --btn-fs: 20px;
+        --btn-ls: 2.4px;
+        --btn-bg-clr: #fff;
+        padding-block: 0.2em;
+        margin-top: 26px;
+
+        &:hover,
+        &:focus {
+          --btn-bg-clr: var(--clr-primary-500);
+        }
+      }
+
+      &__link:not(.btn) {
+        padding-block: 15px;
+      }
+    }
+
+    .socials {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    &__menu-wrapper{
+      display: none;
+      width: 100%;
+      height: max(calc(100vh - 110px), 500px);
+      position: absolute;
+      left:0;
+      top: 100%;
+
+      &--visible {
+        display: block;
+
+        &::before {
+          content: '';
+          position: fixed;
+          inset: 0;
+          z-index: -1;
+          background-color: var(--clr-overlay);
+        }
+      }
+
+    } 
+  }
 }

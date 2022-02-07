@@ -1,11 +1,12 @@
 .btn{
   padding: 0.9em 2.5em;
   background-color: var(--btn-bg-clr, var(--clr-neutral-400));
-  border: 2px solid var(--btn-bg-clr, var(--clr-neutral-400));
+  border: 2px solid var(--btn-border-clr, var(--btn-bg-clr, var(--clr-neutral-400)));
   border-radius: 8px;
-  font-size: var(btn-fs, 13px);
+  font-size: var(--btn-fs, 13px);
   font-weight: var(--fw-bold);
   letter-spacing: var(--btn-ls, 1.5px);
+  text-align: center;
   color: var(--btn-clr, white);
   cursor: pointer;
   all: unset;
@@ -18,14 +19,29 @@
     color: var(--btn-bg-clr, var(--clr-neutral-400));
   }
 
+  &--block {
+    display: block;
+  }
+
+  &--outline {
+    background-color: transparent;
+    border-color: currentColor;
+    color: var(--btn-bg-clr, var(--clr-neutral-400));
+
+    &:hover,
+    &:focus {
+      background-color: var(--btn-bg-clr, var(--clr-neutral-400));
+      border-color: var(--btn-bg-clr, var(--clr-neutral-400));
+      color: white;
+    }
+  }
+
   &--primary {
     --btn-bg-clr: var(--clr-primary-400);
-    --btn-clr: white;
   }
 
   &--danger {
     --btn-bg-clr: var(--clr-primary-500);
-    --btn-clr: white;
   }
 }
 

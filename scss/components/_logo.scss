@@ -1,0 +1,32 @@
+@use '../utils/mixins' as *;
+
+.logo {
+  --default-name-clr: ##242A45;
+  --default-circle-clr: #5267DF;
+  --default-icon-clr: #FFF;
+
+  &__name {
+    fill: var(--logo-name-clr, var(--default-name-clr)); 
+  }
+
+  &__circle {
+    fill: var(--logo-circle-clr, var(--default-circle-clr));
+  }
+
+  &__icon {
+    fill: var(--logo-icon-clr, var(--default-icon-clr));
+  }
+
+  &--light-on-sm {
+    --logo-name-clr: #fff;
+    --logo-circle-clr: #fff;
+    --logo-icon-clr: #000;
+
+    @include mq("lg") {
+     --logo-name-clr: var(--default-name-clr);
+     --logo-circle-clr: var(--default-circle-clr);
+     --logo-icon-clr: var(--default-icon-clr);
+    }
+  }
+
+}
