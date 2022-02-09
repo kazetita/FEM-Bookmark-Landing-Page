@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  z-index: var(--z-index-600);
 
   &__toggle {
     width: 18px;
@@ -19,6 +20,10 @@
       height: 15px;
       background-image: url('../images/icon-close.svg');
     }
+  }
+
+  .socials {
+    display: none;
   }
 
   @include mq("lg", "max") {
@@ -52,6 +57,7 @@
     }
 
     .socials {
+      display: block;
       position: absolute;
       left: 0;
       bottom: 0;

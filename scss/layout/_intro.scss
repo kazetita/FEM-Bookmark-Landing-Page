@@ -1,0 +1,59 @@
+@use '../utils/mixins' as *;
+
+.intro {
+  margin-top: 26px;
+
+  .media {
+    &__img {
+      margin-inline: -20px;
+    }
+
+    &__content {
+      margin-top: 62px;
+      padding: 0;
+    }
+
+    &__desc {
+      margin-top: -3px;
+    }
+
+    &__cta {
+      margin-top: 8px;
+
+      .btn {
+        --btn-ls: 0;
+        --btn-fs: 15px;
+        padding: 0.7em 0.8em;
+      }
+    }
+
+    @include mq("lg") {
+      margin-top: 74px;
+
+      &__img{
+        flex: 55%;
+        margin-right: -12%;
+        margin-top: -20px;
+      }
+
+      &__content {
+        flex: 45%;
+        justify-content: flex-start;
+      }
+
+      &__desc {
+        margin-top: 4px;
+      }
+
+      &__cta {
+        margin-top: 14px;
+
+        .btn {
+          --btn-fs: 14.5px;
+          padding-inline: 1.5em;
+        }
+      }
+    }
+
+  }
+}

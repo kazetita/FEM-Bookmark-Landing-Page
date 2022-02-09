@@ -6,6 +6,10 @@
   margin-inline: auto;
 
   @include mq("lg") {
+    padding-inline: 100px;
+  }
+
+  @include mq("xl") {
     // padding-inline: 170px;
     padding-left: 170px;
     padding-right: 155px;

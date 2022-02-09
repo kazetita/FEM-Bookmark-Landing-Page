@@ -1,0 +1,86 @@
+@use '../utils/mixins' as *;
+
+.media {
+  display: flex;
+  flex-direction: column;
+
+  &__img {
+    display: flex;
+    position: relative;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 80%;
+      z-index: -1;
+      background-color: var(--clr-primary-400);
+      border-radius: 50rem;
+      transform: translate(10%, 30%);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__desc {
+    max-width: 42ch;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  @include mq("lg") {
+    flex-direction: row;
+
+    &__img {
+      flex: 1;
+
+      &::before {
+        height: 72%;
+        transform: translate(20%, 42%);
+      }
+    }
+
+    &__content {
+      flex: 1;
+    }
+
+    &__title {
+      text-align: left;
+    }
+
+    &__desc {
+      text-align: left;
+      margin-inline: 0;
+    }
+
+    &__cta {
+      justify-content: flex-start;
+    }
+
+    &--lg-reverse {
+      flex-direction: row-reverse;
+
+    }
+  }
+}
