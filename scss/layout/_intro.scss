@@ -5,6 +5,9 @@
 
   .media {
     &__img {
+      --bg-height: 82%;
+      --bg-offset-bottom: -5%;
+      --bg-offset-left: 17%;
       margin-inline: -20px;
     }
 
@@ -31,6 +34,9 @@
       margin-top: 74px;
 
       &__img{
+        --bg-height: 72%;
+        --bg-offset-left: 29%;
+        --bg-offset-bottom: -2%;
         flex: 55%;
         margin-right: -12%;
         margin-top: -20px;

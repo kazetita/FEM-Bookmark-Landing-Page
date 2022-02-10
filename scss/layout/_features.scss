@@ -1,0 +1,25 @@
+.features {
+  margin-top: 150px;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__desc {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .tab-list {
+    margin-top: 38px;
+
+    .media__content {
+      margin-top: 62px;
+      padding-inline: 0;
+    }
+
+    .media__desc {
+      margin-top: -10px;
+    }
+  }
+}

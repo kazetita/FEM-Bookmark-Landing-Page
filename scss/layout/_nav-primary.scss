@@ -81,7 +81,8 @@
           position: fixed;
           inset: 0;
           z-index: -1;
-          background-color: var(--clr-overlay);
+          background-color: var(--clr-neutral-500);
+          opacity: 0.95;
         }
       }
 

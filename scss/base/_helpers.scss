@@ -12,9 +12,7 @@
 }
 
 .sm-hidden {
-  display: none;
-
-  @include mq("lg") {
-    display: inline-block;  
+  @include mq("lg", "max") {
+    display: none!important;
   }
 }

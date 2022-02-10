@@ -16,12 +16,23 @@
     &::before {
       content: '';
       position: absolute;
-      width: 150%;
-      height: 80%;
+      bottom: var(--bg-offset-bottom, -18%);
+      left: var(--bg-offset-left, 10%);
+      width: var(--bg-width, 100%);
+      height: var(--bg-height, 100%);
       z-index: -1;
       background-color: var(--clr-primary-400);
-      border-radius: 50rem;
-      transform: translate(10%, 30%);
+      /* stylelint-disable-next-line */
+      @util border-left-radius(50rem);
+    }
+
+    &--bg-ltr {
+      &::before {
+        left: auto;
+        right: var(--bg-offset-right, 10%);
+        bottom: var(--bg-offset-bottom, -18%);
+        transform: rotateY(180deg);
+      }
     }
   }
 
@@ -54,11 +65,6 @@
 
     &__img {
       flex: 1;
-
-      &::before {
-        height: 72%;
-        transform: translate(20%, 42%);
-      }
     }
 
     &__content {
