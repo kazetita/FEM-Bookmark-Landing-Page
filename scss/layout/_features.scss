@@ -1,3 +1,5 @@
+@use '../utils/mixins' as *
+
 .features {
   margin-top: 150px;
 
@@ -6,20 +8,77 @@
   }
 
   &__desc {
+    max-width: 45ch;
     margin-top: 10px;
+    margin-inline: auto;
     text-align: center;
   }
 
   .tab-list {
     margin-top: 38px;
 
-    .media__content {
+  }
+
+  .media {
+    &__img {
+      --bg-offset-bottom: max(-18%, -62px);
+    }
+
+    &__content {
       margin-top: 62px;
       padding-inline: 0;
     }
 
-    .media__desc {
+    &__desc {
       margin-top: -10px;
+    }
+
+    .btn {
+      --btn-fs: 14.5px;
+      --btn-ls: 0;
+      padding: 0.8em 1.6em;
+    }
+  }
+
+  @include mq("lg") {
+    margin-top: 97px;
+
+    &__desc {
+      margin-top: 21px;
+    }
+
+    .tab-list {
+      margin-top: 45px;
+
+      &__nav {
+        width: 67%;
+        margin-inline: auto;
+      }
+    }
+
+    .media {
+      gap: 11%;
+
+      &__img {
+        --bg-width: 150%;
+        --bg-offset-bottom: -26%;
+        --bg-offset-right: 13%;
+        flex: 48%;
+      }
+
+      &__content {
+        flex: 40%;
+        justify-content: stretch;
+        margin-top: 45px;
+      }
+
+      &__desc {
+        margin-top: 2px;
+      }
+
+      &__cta {
+        margin-top: 14px;
+      }
     }
   }
 }

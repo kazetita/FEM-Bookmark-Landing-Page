@@ -1,3 +1,5 @@
+@use '../utils/mixins' as *;
+
 .tab-list {
   &__nav {
     /* stylelint-disable-next-line */
@@ -54,5 +56,34 @@
     &--active {
       display: block;
     }
+  }
+
+  @include mq("lg") {
+
+    &__nav {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    &__nav-item {
+      flex: 1;
+      border: none;
+      border-bottom: 1px solid var(--clr-neutral-400);
+
+      &--active {
+
+        &::after {
+          width: 100%;
+          height: 4px;
+          left: 0;
+          transform: none;
+        }
+      }
+    }
+
+    &__nav-link {
+      padding-block: 26px;
+    }
+
   }
 }

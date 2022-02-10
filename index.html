@@ -17,9 +17,27 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
     .debug {overflow: hidden;}
+    .btn-debug {
+      position: fixed;
+      top: 2rem;
+      left: 2rem;
+      width: 4rem;
+      font-size: 12px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      z-index: 100;
+      cursor: pointer;
+      background-color: lightgray;
+      border: 1px solid lightgray;
+      color: #222;
+    }
+    .btn-debug:hover {
+      background-color: transparent;
+    }
   </style>
 </head>
 <body class="debug">
+  <button class="btn-debug">Debug</button>
   <!-- HEADER -->
   <header class="header container">
     <nav class="nav-primary">
@@ -107,7 +125,7 @@
 
           <div class="tab-list__item" id="search-feature">
             <div class="media">
-              <div class="media__img"><img src="images/illustration-features-tab-1.svg" alt="Feature 1"></div>
+              <div class="media__img media__img--bg-ltr"><img src="images/illustration-features-tab-2.svg" alt="Feature 1"></div>
               <div class="media__content">
                 <h2 class="media__title">Intelligent search</h2>
                 <p class="media__desc">Our powerful search feature will help you find saved sites in no time at all. 
@@ -121,7 +139,7 @@
 
           <div class="tab-list__item" id="share-feature">
             <div class="media">
-              <div class="media__img"><img src="images/illustration-features-tab-1.svg" alt="Feature 1"></div>
+              <div class="media__img media__img--bg-ltr"><img src="images/illustration-features-tab-3.svg" alt="Feature 1"></div>
               <div class="media__content">
                 <h2 class="media__title">Share your bookmarks</h2>
                 <p class="media__desc">Easily share your bookmarks and collections with others. Create a shareable 

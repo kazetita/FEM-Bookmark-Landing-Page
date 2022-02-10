@@ -539,6 +539,37 @@ h2 {
 .tab-list__item--active {
   display: block;
 }
+@media screen and (min-width: 64rem) {
+  .tab-list__nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .tab-list__nav-item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    border: none;
+    border-bottom: 0.0625rem solid hsl(229, 8%, 60%);
+    border-bottom: 0.0625rem solid hsl(229, 8%, 60%);
+    border-bottom: 0.0625rem solid var(--clr-neutral-400);
+  }
+  .tab-list__nav-item--active::after {
+    width: 100%;
+    height: 0.25rem;
+    left: 0;
+    -webkit-transform: none;
+            transform: none;
+  }
+  .tab-list__nav-link {
+    padding-top: 1.625rem;
+    padding-bottom: 1.625rem;
+  }
+}
 
 .container {
   max-width: 90rem;
@@ -730,17 +761,70 @@ h2 {
   text-align: center;
 }
 .features__desc {
+  max-width: 45ch;
   margin-top: 0.625rem;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 .features .tab-list {
   margin-top: 2.375rem;
 }
-.features .tab-list .media__content {
+.features .media__img {
+  --bg-offset-bottom: max(-18%, -3.875rem);
+}
+.features .media__content {
   margin-top: 3.875rem;
   padding-left: 0;
   padding-right: 0;
 }
-.features .tab-list .media__desc {
+.features .media__desc {
   margin-top: -0.625rem;
+}
+.features .media .btn {
+  --btn-fs: 0.90625rem;
+  --btn-ls: 0;
+  padding: 0.8em 1.6em;
+}
+@media screen and (min-width: 64rem) {
+  .features {
+    margin-top: 6.0625rem;
+  }
+  .features__desc {
+    margin-top: 1.3125rem;
+  }
+  .features .tab-list {
+    margin-top: 2.8125rem;
+  }
+  .features .tab-list__nav {
+    width: 67%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .features .media {
+    gap: 11%;
+  }
+  .features .media__img {
+    --bg-width: 150%;
+    --bg-offset-bottom: -26%;
+    --bg-offset-right: 13%;
+    -webkit-box-flex: 48%;
+        -ms-flex: 48%;
+            flex: 48%;
+  }
+  .features .media__content {
+    -webkit-box-flex: 40%;
+        -ms-flex: 40%;
+            flex: 40%;
+    -webkit-box-pack: stretch;
+        -ms-flex-pack: stretch;
+            justify-content: stretch;
+    margin-top: 2.8125rem;
+  }
+  .features .media__desc {
+    margin-top: 0.125rem;
+  }
+  .features .media__cta {
+    margin-top: 0.875rem;
+  }
 }
