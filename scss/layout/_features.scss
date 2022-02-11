@@ -1,4 +1,4 @@
-@use '../utils/mixins' as *
+@use '../utils/mixins' as *;
 
 .features {
   margin-top: 150px;
@@ -54,15 +54,27 @@
         width: 67%;
         margin-inline: auto;
       }
+
+      &__item {
+        --bg-width: 150%;
+        --bg-height: min(100%, 350px);
+        --bg-offset-right: 13%;
+        --bg-offset-bottom: -8%;
+
+        &:nth-child(1) {
+          --bg-offset-bottom: -26%;
+        }
+
+      }
     }
 
     .media {
       gap: 11%;
 
       &__img {
-        --bg-width: 150%;
-        --bg-offset-bottom: -26%;
-        --bg-offset-right: 13%;
+        // --bg-width: 150%;
+        // --bg-offset-bottom: -26%;
+        // --bg-offset-right: 13%;
         flex: 48%;
       }
 
