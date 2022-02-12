@@ -6,6 +6,10 @@ body {
   color: var(--clr-neutral-400);
 }
 
+p {
+  max-width: var(--text-max-width);
+}
+
 h1 {
   font-size: var(--fs-600);
   font-weight: var(--fw-bold);
@@ -19,4 +23,5 @@ h2 {
   line-height: var(--lh-300);
   color: var(--clr-neutral-500);
 }
+
 

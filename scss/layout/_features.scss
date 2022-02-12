@@ -8,7 +8,7 @@
   }
 
   &__desc {
-    max-width: 48ch;
+    // max-width: var(--text-max-width);
     margin-top: 10px;
     margin-inline: auto;
     text-align: center;
@@ -16,35 +16,21 @@
 
   .tab-list {
     margin-top: 38px;
-
-    &__item {
-      --bg-offset-bottom: max(-18%, -62px);
-    }
   }
 
   .media {
 
     &__content {
-      padding-inline: 0;
-    }
-
-    &__title {
-      margin-top: 62px;
+      padding-top: 82px;
     }
 
     &__desc {
-      margin-top: -10px;
-    }
-
-    .btn {
-      --btn-fs: 14.5px;
-      --btn-ls: 0;
-      padding: 0.8em 1.6em;
+      margin-top: 11px;
     }
   }
 
   @include mq("lg") {
-    margin-top: 100px;
+    margin-top: 133px;
 
     &__desc {
       margin-top: 21px;
@@ -57,42 +43,22 @@
         width: 67%;
         margin-inline: auto;
       }
-
-      &__item {
-        --bg-width: 150%;
-        --bg-height: min(100%, 350px);
-        --bg-offset-right: 13%;
-        --bg-offset-bottom: -8%;
-
-        &:first-child {
-          --bg-offset-bottom: -25%;
-        }
-      }
-
     }
 
     .media {
-      gap: 11%;
-
-      &__img {
-        flex: 48%;
-      }
+      gap: 128px;
 
       &__content {
-        flex: 40%;
         justify-content: stretch;
-      }
-
-      &__title {
-        margin-top: 45px;
+        padding-top: 65px;
       }
 
       &__desc {
-        margin-top: 2px;
+        margin-top: 22px;
       }
 
       &__cta {
-        margin-top: 14px;
+        margin-top: 34px;
       }
     }
   }

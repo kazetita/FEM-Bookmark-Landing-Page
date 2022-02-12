@@ -1,14 +1,13 @@
 @use '../utils/mixins' as *;
 
 .extensions {
-  margin-top: 130px;
+  margin-top: 148px;
 
   &__title {
     text-align: center;
   }
 
   &__desc {
-    max-width: 48ch;
     margin-inline: auto;
     margin-top: 10px;
     text-align: center;

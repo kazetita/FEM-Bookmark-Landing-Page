@@ -5,7 +5,6 @@
   flex-direction: column;
 
   &__img {
-    display: flex;
     position: relative;
 
     img {
@@ -13,35 +12,31 @@
       object-fit: cover;
     }
 
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: var(--bg-offset-bottom, -18%);
-      left: var(--bg-offset-left, 10%);
-      width: var(--bg-width, 100%);
-      height: var(--bg-height, 100%);
-      z-index: -1;
-      background-color: var(--clr-primary-400);
-      /* stylelint-disable-next-line */
-      @util border-left-radius(50rem);
-    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: var(--bg-offset-bottom, -18%);
+    //   left: var(--bg-offset-left, 10%);
+    //   width: var(--bg-width, 100%);
+    //   height: var(--bg-height, 100%);
+    //   z-index: -1;
+    //   background-color: var(--clr-primary-400);
+    //   /* stylelint-disable-next-line */
+    //   @util border-left-radius(50rem);
+    // }
 
-    &--bg-ltr {
-      &::before {
-        left: auto;
-        right: var(--bg-offset-right, 10%);
-        bottom: var(--bg-offset-bottom, -18%);
-        transform: rotateY(180deg);
-      }
-    }
+    // &--bg-ltr {
+    //   &::before {
+    //     left: auto;
+    //     right: var(--bg-offset-right, 10%);
+    //     bottom: var(--bg-offset-bottom, -18%);
+    //     transform: rotateY(180deg);
+    //   }
+    // }
   }
 
   &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    padding-top: 61px;
   }
 
   &__title {
@@ -49,8 +44,10 @@
   }
 
   &__desc {
-    max-width: 42ch;
+    // max-width: 42ch;
+    // max-width: var(--text-max-width);
     margin-inline: auto;
+    margin-top: 19px;
     text-align: center;
   }
 
@@ -58,17 +55,19 @@
     display: flex;
     justify-content: center;
     gap: 12px;
+    margin-top: 27px;
   }
 
   @include mq("lg") {
     flex-direction: row;
 
     &__img {
-      flex: 1;
+      flex: 55%;
     }
 
     &__content {
-      flex: 1;
+      flex: 45%;
+      padding-top: 64px;
     }
 
     &__title {
@@ -78,10 +77,12 @@
     &__desc {
       text-align: left;
       margin-inline: 0;
+      margin-top: 24px;
     }
 
     &__cta {
       justify-content: flex-start;
+      margin-top: 36px;
     }
 
     &--lg-reverse {

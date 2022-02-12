@@ -19,6 +19,7 @@
   --lh-300: 1.3;
   --lh-400: 1.7;
   --lh-h1: var(--lh-300);
+  --text-max-width: 48ch;
 }
 @media screen and (min-width: 64rem) {
   :root {
@@ -133,6 +134,11 @@ body {
   line-height: var(--lh-400);
   color: hsl(229, 8%, 60%);
   color: var(--clr-neutral-400);
+}
+
+p {
+  max-width: 48ch;
+  max-width: var(--text-max-width);
 }
 
 h1 {
@@ -368,9 +374,6 @@ h2 {
           flex-direction: column;
 }
 .media__img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   position: relative;
 }
 .media__img img {
@@ -378,54 +381,16 @@ h2 {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.media__img::before {
-  content: "";
-  position: absolute;
-  bottom: -18%;
-  bottom: var(--bg-offset-bottom, -18%);
-  left: 10%;
-  left: var(--bg-offset-left, 10%);
-  width: 100%;
-  width: var(--bg-width, 100%);
-  height: 100%;
-  height: var(--bg-height, 100%);
-  z-index: -1;
-  background-color: hsl(231, 69%, 60%);
-  background-color: var(--clr-primary-400);
-  /* stylelint-disable-next-line */
-  border-bottom-left-radius: 50rem;
-  border-top-left-radius: 50rem;
-}
-.media__img--bg-ltr::before {
-  left: auto;
-  right: 10%;
-  right: var(--bg-offset-right, 10%);
-  bottom: -18%;
-  bottom: var(--bg-offset-bottom, -18%);
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
 .media__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 1.25rem;
-  padding: 1.25rem;
+  padding-top: 3.8125rem;
 }
 .media__title {
   text-align: center;
 }
 .media__desc {
-  max-width: 42ch;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1.1875rem;
   text-align: center;
 }
 .media__cta {
@@ -436,6 +401,7 @@ h2 {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 0.75rem;
+  margin-top: 1.6875rem;
 }
 @media screen and (min-width: 64rem) {
   .media {
@@ -445,14 +411,15 @@ h2 {
             flex-direction: row;
   }
   .media__img {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -webkit-box-flex: 55%;
+        -ms-flex: 55%;
+            flex: 55%;
   }
   .media__content {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -webkit-box-flex: 45%;
+        -ms-flex: 45%;
+            flex: 45%;
+    padding-top: 4rem;
   }
   .media__title {
     text-align: left;
@@ -461,11 +428,13 @@ h2 {
     text-align: left;
     margin-left: 0;
     margin-right: 0;
+    margin-top: 1.5rem;
   }
   .media__cta {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    margin-top: 2.25rem;
   }
   .media--lg-reverse {
     -webkit-box-orient: horizontal;
@@ -514,7 +483,7 @@ h2 {
 }
 .tab-list__nav-item--active::after {
   content: "";
-  width: 50%;
+  width: 46%;
   height: 0.3125rem;
   position: absolute;
   bottom: 0;
@@ -663,7 +632,7 @@ h2 {
 @media screen and (min-width: 75rem) {
   .container {
     padding-left: 10.625rem;
-    padding-right: 9.6875rem;
+    padding-right: 8.75rem;
   }
 }
 
@@ -770,27 +739,14 @@ h2 {
 }
 
 .intro {
-  margin-top: 1.625rem;
-  overflow-x: hidden;
+  margin-top: 2.625rem;
 }
 .intro .media__img {
-  --bg-height: 82%;
-  --bg-offset-bottom: -5%;
-  --bg-offset-left: 17%;
-  margin-left: -1.25rem;
-  margin-right: -1.25rem;
+  -webkit-transform: scale(1.13);
+          transform: scale(1.13);
 }
 .intro .media__content {
-  padding: 0;
-}
-.intro .media__title {
-  margin-top: 3.8125rem;
-}
-.intro .media__desc {
-  margin-top: -0.1875rem;
-}
-.intro .media__cta {
-  margin-top: 0.5rem;
+  padding-top: 4.5625rem;
 }
 .intro .media__cta .btn {
   --btn-ls: 0;
@@ -800,34 +756,16 @@ h2 {
 @media screen and (min-width: 64rem) {
   .intro {
     margin-top: 4.5rem;
-    overflow: visible;
   }
   .intro .media__img {
-    --bg-height: 72%;
-    --bg-offset-left: 29%;
-    --bg-offset-bottom: -3%;
-    -webkit-box-flex: 55%;
-        -ms-flex: 55%;
-            flex: 55%;
-    margin-right: -12%;
-    margin-top: -1.25rem;
+    -webkit-transform: scale(1.07) translateX(13%);
+            transform: scale(1.07) translateX(13%);
   }
   .intro .media__content {
-    -webkit-box-flex: 45%;
-        -ms-flex: 45%;
-            flex: 45%;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-  }
-  .intro .media__title {
-    margin-top: 4rem;
-  }
-  .intro .media__desc {
-    margin-top: 0.25rem;
-  }
-  .intro .media__cta {
-    margin-top: 0.875rem;
+    padding-top: 4rem;
   }
   .intro .media__cta .btn {
     --btn-fs: 0.90625rem;
@@ -843,7 +781,6 @@ h2 {
   text-align: center;
 }
 .features__desc {
-  max-width: 48ch;
   margin-top: 0.625rem;
   margin-left: auto;
   margin-right: auto;
@@ -852,18 +789,11 @@ h2 {
 .features .tab-list {
   margin-top: 2.375rem;
 }
-.features .tab-list__item {
-  --bg-offset-bottom: max(-18%, -3.875rem);
-}
 .features .media__content {
-  padding-left: 0;
-  padding-right: 0;
-}
-.features .media__title {
-  margin-top: 3.875rem;
+  padding-top: 5.125rem;
 }
 .features .media__desc {
-  margin-top: -0.625rem;
+  margin-top: 0.6875rem;
 }
 .features .media .btn {
   --btn-fs: 0.90625rem;
@@ -872,7 +802,7 @@ h2 {
 }
 @media screen and (min-width: 64rem) {
   .features {
-    margin-top: 6.25rem;
+    margin-top: 8.3125rem;
   }
   .features__desc {
     margin-top: 1.3125rem;
@@ -885,50 +815,30 @@ h2 {
     margin-left: auto;
     margin-right: auto;
   }
-  .features .tab-list__item {
-    --bg-width: 150%;
-    --bg-height: min(100%, 21.875rem);
-    --bg-offset-right: 13%;
-    --bg-offset-bottom: -8%;
-  }
-  .features .tab-list__item:first-child {
-    --bg-offset-bottom: -25%;
-  }
   .features .media {
-    gap: 11%;
-  }
-  .features .media__img {
-    -webkit-box-flex: 48%;
-        -ms-flex: 48%;
-            flex: 48%;
+    gap: 8rem;
   }
   .features .media__content {
-    -webkit-box-flex: 40%;
-        -ms-flex: 40%;
-            flex: 40%;
     -webkit-box-pack: stretch;
         -ms-flex-pack: stretch;
             justify-content: stretch;
-  }
-  .features .media__title {
-    margin-top: 2.8125rem;
+    padding-top: 4.0625rem;
   }
   .features .media__desc {
-    margin-top: 0.125rem;
+    margin-top: 1.375rem;
   }
   .features .media__cta {
-    margin-top: 0.875rem;
+    margin-top: 2.125rem;
   }
 }
 
 .extensions {
-  margin-top: 8.125rem;
+  margin-top: 9.25rem;
 }
 .extensions__title {
   text-align: center;
 }
 .extensions__desc {
-  max-width: 48ch;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.625rem;

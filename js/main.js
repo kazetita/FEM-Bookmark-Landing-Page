@@ -46,6 +46,3 @@ const handlerNavItemOnClick = function(e) {
 
 tabListNavItems.forEach(tab => tab.addEventListener('click', handlerNavItemOnClick));
 
-// DEBUG
-const debugToggle = document.querySelector('.btn-debug');
-debugToggle.onclick = () => document.body.classList.toggle('debug');

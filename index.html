@@ -16,28 +16,9 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-    .debug {overflow: hidden;}
-    .btn-debug {
-      position: fixed;
-      top: 2rem;
-      right: 2rem;
-      width: 4rem;
-      font-size: 12px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      z-index: 100;
-      cursor: pointer;
-      background-color: lightgray;
-      border: 1px solid lightgray;
-      color: #222;
-    }
-    .btn-debug:hover {
-      background-color: transparent;
-    }
   </style>
 </head>
 <body>
-  <button class="btn-debug">Debug</button>
   <!-- HEADER -->
   <header class="header container">
     <nav class="nav-primary">
@@ -209,6 +190,19 @@
       </div>
     </section>
     <!-- END EXTENSION SECTION -->
+
+    <!-- FAQ SECTION -->
+    <section class="faq">
+      <h2 class="faq__title">Frequently Asked Questions</h2>
+      <p class="faq__desc">Here are some of our FAQs. If you have any other questions you’d like 
+  answered please feel free to email us.</p>
+      <div class="accordion">
+        <div class="accordion__item">
+          <div class="acordion__header"></div>
+          <div class="accordion__body"></div>
+        </div>
+      </div>
+    </section>
   <br>
   <br>
   <br>
@@ -220,10 +214,9 @@
   <br>
   <br>
 
-  Frequently Asked Questions
   
-  Here are some of our FAQs. If you have any other questions you’d like 
-  answered please feel free to email us.
+  
+  
 
   <!-- Question 1 -->
   What is Bookmark?

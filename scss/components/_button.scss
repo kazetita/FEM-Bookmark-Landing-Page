@@ -57,6 +57,12 @@
     --btn-bg-clr: var(--clr-primary-500);
     --btn-border-clr: var(--clr-primary-500);
   }
+
+  @include mq("lg") {
+    --btn-fs: 14.5px;
+    --btn-ls: 0;
+    padding: 0.8em 1.6em;
+  }
 }
 
 

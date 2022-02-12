@@ -3,6 +3,7 @@
 .container {
   max-width: var(--max-width);
   padding-inline: 32px;
+  // padding-inline: clamp(2rem, -1.0369718309859155rem + 12.957746478873238vw, 10.625rem);
   margin-inline: auto;
 
   @include mq("lg") {
@@ -12,7 +13,7 @@
   @include mq("xl") {
     // padding-inline: 170px;
     padding-left: 170px;
-    padding-right: 155px;
+    padding-right: 140px;
   }
 }
 
