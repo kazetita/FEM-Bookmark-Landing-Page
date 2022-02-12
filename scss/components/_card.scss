@@ -1,3 +1,5 @@
+@use '../utils/mixins' as *;
+
 .card {
   --card-padding-inline: 25px;
   width: 100%;
@@ -45,6 +47,24 @@
       left: calc(var(--card-padding-inline) * -1);
       top: 0;
       background-image: url('../images/bg-dots.svg');
+    }
+  }
+
+  @include mq("lg") {
+    &__img {
+      padding-bottom: 30px;
+    }
+
+    &__desc {
+      margin-top: 8px;
+    }
+
+    &__cta {
+      padding-block: 24px;
+
+      .btn {
+        padding-block: 0.75em;
+      }
     }
   }
 }

@@ -2,6 +2,7 @@
 
 .intro {
   margin-top: 26px;
+  overflow-x: hidden;
 
   .media {
     &__img {
@@ -12,8 +13,11 @@
     }
 
     &__content {
-      margin-top: 62px;
       padding: 0;
+    }
+
+    &__title {
+      margin-top: 61px;
     }
 
     &__desc {
@@ -29,14 +33,18 @@
         padding: 0.7em 0.8em;
       }
     }
+  }
 
-    @include mq("lg") {
-      margin-top: 74px;
+  @include mq("lg") {
+    margin-top: 72px;
+    overflow: visible;
+
+    .media {
 
       &__img{
         --bg-height: 72%;
         --bg-offset-left: 29%;
-        --bg-offset-bottom: -2%;
+        --bg-offset-bottom: -3%;
         flex: 55%;
         margin-right: -12%;
         margin-top: -20px;
@@ -45,6 +53,10 @@
       &__content {
         flex: 45%;
         justify-content: flex-start;
+      }
+      
+      &__title {
+        margin-top: 64px;
       }
 
       &__desc {
@@ -60,6 +72,5 @@
         }
       }
     }
-
   }
 }

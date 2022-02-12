@@ -7,7 +7,6 @@
   &__img {
     display: flex;
     position: relative;
-    margin-bottom: calc(var(--bg-offset-bottom, -18%) * -1);
 
     img {
       width: 100%;
