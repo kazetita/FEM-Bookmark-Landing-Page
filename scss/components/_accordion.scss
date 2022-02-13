@@ -1,0 +1,60 @@
+@use '../utils/mixins' as *;
+
+.accordion {
+
+  &__header {
+    --arrow-width: 18px;
+    --arrow-height: 12px;
+    position: relative;
+    padding-block: 18.6px;
+    padding-right: var(--arrow-width);
+    border-bottom: 1px solid var(--clr-gray-500);
+    color: var(--clr-neutral-500);
+    cursor: pointer;
+    transition: background-color 250ms ease-in-out;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: calc(50% - calc(var(--arrow-height) / 2));
+      z-index: 1;
+      height: var(--arrow-height);
+      width: var(--arrow-width);
+      background-image: url('../images/icon-arrow.svg');
+      transition: transform 250ms ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--clr-gray-400);
+    }
+  }
+
+  &__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 250ms ease-out;
+
+    > * {
+      padding: 10px;
+    }
+  }
+
+
+  &__item {
+
+    &--open {
+      .accordion__header {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+
+      .accordion__body {
+        max-height: 1000px;
+        transition: max-height 250ms ease-in;
+      }
+    }
+  }
+}

@@ -46,3 +46,10 @@ const handlerNavItemOnClick = function(e) {
 
 tabListNavItems.forEach(tab => tab.addEventListener('click', handlerNavItemOnClick));
 
+//ACCORDION
+const accordion = document.querySelector('.accordion');
+const accordionItems = [... accordion.children];
+
+const handlerAccordionItemOnClick = e => e.currentTarget.classList.toggle('accordion__item--open');
+
+accordionItems.forEach(item => item.addEventListener('click', handlerAccordionItemOnClick));

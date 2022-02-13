@@ -1,5 +1,32 @@
 @use '../utils/mixins' as *;
 
 .faq {
+  //as
+  margin-top: 139px;
 
+  &__title {
+    text-align: center;
+  }
+
+  &__desc {
+    margin-inline: auto;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  &__cta {
+    margin-top: 47px;
+    text-align: center;
+
+    .btn {
+      --btn-fs: 15px;
+      --btn-ls: 0;
+      padding-block: 0.6em;
+      padding-inline: 1.4em;
+    }
+  }
+
+  .accordion {
+    margin-top: 46px;
+  }
 }

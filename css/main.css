@@ -4,6 +4,7 @@
   --clr-blue-500: hsl(229, 31%, 21%);
   --clr-red-400: hsl(0, 94%, 66%);
   --clr-gray-400: hsl(0, 0%, 97%);
+  --clr-gray-500: hsl(0, 0%, 84%);
   --clr-primary-400: var(--clr-blue-400);
   --clr-primary-500: var(--clr-red-400);
   --clr-neutral-400: var(--clr-blue-300);
@@ -615,6 +616,59 @@ h2 {
   }
 }
 
+.accordion__header {
+  --arrow-width: 1.125rem;
+  --arrow-height: 0.75rem;
+  position: relative;
+  padding-top: 1.1625rem;
+  padding-bottom: 1.1625rem;
+  padding-right: var(--arrow-width);
+  border-bottom: 0.0625rem solid hsl(0, 0%, 84%);
+  border-bottom: 0.0625rem solid hsl(0, 0%, 84%);
+  border-bottom: 0.0625rem solid var(--clr-gray-500);
+  color: hsl(229, 31%, 21%);
+  color: var(--clr-neutral-500);
+  cursor: pointer;
+  -webkit-transition: background-color 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out;
+}
+.accordion__header::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: calc(50% - var(--arrow-height) / 2);
+  z-index: 1;
+  height: var(--arrow-height);
+  width: var(--arrow-width);
+  background-image: url("../images/icon-arrow.svg");
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+.accordion__header:hover, .accordion__header:focus {
+  background-color: hsl(0, 0%, 97%);
+  background-color: var(--clr-gray-400);
+}
+.accordion__body {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 250ms ease-out;
+  transition: max-height 250ms ease-out;
+}
+.accordion__body > * {
+  padding: 0.625rem;
+}
+.accordion__item--open .accordion__header::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.accordion__item--open .accordion__body {
+  max-height: 62.5rem;
+  -webkit-transition: max-height 250ms ease-in;
+  transition: max-height 250ms ease-in;
+}
+
 .container {
   max-width: 90rem;
   max-width: var(--max-width);
@@ -767,7 +821,7 @@ h2 {
             justify-content: flex-start;
     padding-top: 4rem;
   }
-  .intro .media__cta .btn {
+  .intro .media .btn {
     --btn-fs: 0.90625rem;
     padding-left: 1.5em;
     padding-right: 1.5em;
@@ -889,4 +943,32 @@ h2 {
     -ms-flex-item-align: end;
         align-self: flex-end;
   }
+}
+
+.faq {
+  margin-top: 8.6875rem;
+}
+.faq__title {
+  text-align: center;
+}
+.faq__desc {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 0.9375rem;
+}
+.faq__cta {
+  margin-top: 2.9375rem;
+  text-align: center;
+}
+.faq__cta .btn {
+  --btn-fs: 0.9375rem;
+  --btn-ls: 0;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  padding-left: 1.4em;
+  padding-right: 1.4em;
+}
+.faq .accordion {
+  margin-top: 2.875rem;
 }

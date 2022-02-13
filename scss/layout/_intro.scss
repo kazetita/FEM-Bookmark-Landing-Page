@@ -34,6 +34,11 @@
         justify-content: flex-start;
         padding-top: 64px;
       }
+
+      .btn {
+        --btn-fs: 14.5px;
+        padding-inline: 1.5em;
+      }
     }
   }
 }
