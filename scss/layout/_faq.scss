@@ -41,12 +41,15 @@
 
     &__cta {
       margin-top: 53px;
+
+      .btn {
+        --btn-fs: 14.5px;
+        padding: 0.8em 1.5em;
+      }
     }
 
     .accordion {
       margin-top: 57px;
     }
-
-
   }
 }

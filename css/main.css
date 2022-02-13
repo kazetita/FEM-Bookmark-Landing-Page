@@ -676,7 +676,7 @@ h2 {
     padding-bottom: 1.1875rem;
   }
   .accordion__header::after {
-    right: 1.25rem;
+    right: var(--header-pad-right);
   }
   .accordion__header:first-child {
     border-top: 0.0625rem solid hsl(0, 0%, 84%);
@@ -1005,6 +1005,10 @@ h2 {
   }
   .faq__cta {
     margin-top: 3.3125rem;
+  }
+  .faq__cta .btn {
+    --btn-fs: 0.90625rem;
+    padding: 0.8em 1.5em;
   }
   .faq .accordion {
     margin-top: 3.5625rem;
