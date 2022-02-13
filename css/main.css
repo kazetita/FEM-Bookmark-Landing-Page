@@ -20,7 +20,7 @@
   --lh-300: 1.3;
   --lh-400: 1.7;
   --lh-h1: var(--lh-300);
-  --text-max-width: 48ch;
+  --text-max-width: 47ch;
 }
 @media screen and (min-width: 64rem) {
   :root {
@@ -138,7 +138,7 @@ body {
 }
 
 p {
-  max-width: 48ch;
+  max-width: 47ch;
   max-width: var(--text-max-width);
 }
 
@@ -668,6 +668,27 @@ h2 {
   -webkit-transition: max-height 250ms ease-in;
   transition: max-height 250ms ease-in;
 }
+@media screen and (min-width: 64rem) {
+  .accordion__header {
+    --header-pad-right: 1.75rem;
+    padding-right: calc(var(--arrow-width) + var(--header-pad-right));
+    padding-top: 1.1875rem;
+    padding-bottom: 1.1875rem;
+  }
+  .accordion__header::after {
+    right: 1.25rem;
+  }
+  .accordion__header:first-child {
+    border-top: 0.0625rem solid hsl(0, 0%, 84%);
+    border-top: 0.0625rem solid hsl(0, 0%, 84%);
+    border-top: 0.0625rem solid var(--clr-gray-500);
+  }
+  .accordion__header:last-child {
+    border-bottom: 0.0625rem solid hsl(0, 0%, 84%);
+    border-bottom: 0.0625rem solid hsl(0, 0%, 84%);
+    border-bottom: 0.0625rem solid var(--clr-gray-500);
+  }
+}
 
 .container {
   max-width: 90rem;
@@ -970,5 +991,22 @@ h2 {
   padding-right: 1.4em;
 }
 .faq .accordion {
+  max-width: 34.125rem;
   margin-top: 2.875rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 64rem) {
+  .faq {
+    margin-top: 9.6875rem;
+  }
+  .faq__desc {
+    margin-top: 1.375rem;
+  }
+  .faq__cta {
+    margin-top: 3.3125rem;
+  }
+  .faq .accordion {
+    margin-top: 3.5625rem;
+  }
 }

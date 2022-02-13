@@ -57,4 +57,24 @@
       }
     }
   }
+
+  @include mq("lg") {
+    &__header {
+      --header-pad-right: 28px;
+      padding-right: calc(var(--arrow-width) + var(--header-pad-right));
+      padding-block: 19px;
+
+      &::after {
+        right: 20px;
+      }
+
+      &:first-child {
+        border-top: 1px solid var(--clr-gray-500);
+      }
+
+      &:last-child {
+        border-bottom: 1px solid var(--clr-gray-500);
+      }
+    }
+  }
 }

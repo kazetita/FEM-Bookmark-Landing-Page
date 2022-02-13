@@ -27,6 +27,26 @@
   }
 
   .accordion {
+    max-width: 546px;
     margin-top: 46px;
+    margin-inline: auto;
+  }
+
+  @include mq("lg") {
+    margin-top: 155px;
+
+    &__desc {
+      margin-top: 22px;
+    }
+
+    &__cta {
+      margin-top: 53px;
+    }
+
+    .accordion {
+      margin-top: 57px;
+    }
+
+
   }
 }
