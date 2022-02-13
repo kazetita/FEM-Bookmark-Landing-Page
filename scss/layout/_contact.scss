@@ -1,0 +1,27 @@
+@use '../utils/mixins' as *;
+
+.contact {
+  margin-top: 124px;
+  padding-block: 70px 60px;
+  color: white;
+  background-color: var(--clr-primary-400);
+
+  &__subtitle {
+    font-size: 12px;
+    font-weight: var(--fw-bold);
+    letter-spacing: 4.6px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-top: 7px;
+    color: inherit;
+    text-align: center;
+  }
+
+  .form {
+    margin-top: 27px;
+  }
+
+}

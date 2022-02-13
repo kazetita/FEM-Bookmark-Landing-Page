@@ -1,0 +1,24 @@
+@use '../utils/mixins' as *;
+
+.form {
+  font-size: 14px;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+  }
+
+  &__input {
+    padding: 0.9em 1.4em;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 0.2px;
+  }
+
+  &__btn {
+    padding-block: 0.7em;
+    font-size: inherit;
+    letter-spacing: 0;
+  }
+}
