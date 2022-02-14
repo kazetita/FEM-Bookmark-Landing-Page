@@ -21,4 +21,21 @@
     font-size: inherit;
     letter-spacing: 0;
   }
+
+  @include mq("lg") {
+    font-size: 14.5px;
+
+    &__group {
+      flex-direction: row;
+    }
+
+    &__input {
+      flex: 1;
+      letter-spacing: 0;
+    }
+
+    &__btn {
+      padding-inline: 1.7em;
+    }
+  }
 }

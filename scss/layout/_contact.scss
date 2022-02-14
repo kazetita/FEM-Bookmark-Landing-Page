@@ -7,6 +7,7 @@
   background-color: var(--clr-primary-400);
 
   &__subtitle {
+    margin-inline: auto;
     font-size: 12px;
     font-weight: var(--fw-bold);
     letter-spacing: 4.6px;
@@ -21,7 +22,29 @@
   }
 
   .form {
+    width: 100%;
     margin-top: 27px;
+    margin-inline: auto;
+    max-width: 445px;
   }
 
+  @include mq("lg") {
+    margin-top: 150px;
+    padding-block: 68px 74px;
+
+    &__subtitle {
+      font-size: 13px;
+      letter-spacing: 5px;
+    }
+
+    &__title {
+      margin-top: 34px;
+      margin-inline: auto;
+      max-width: 22ch;
+    }
+    
+    .form {
+      margin-top: 36px;
+    }
+  }
 }

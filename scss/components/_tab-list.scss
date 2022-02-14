@@ -18,7 +18,7 @@
     }
     
     &:not(.tab-list__nav-item--active):where(:hover, :focus) {
-      background-color: var(--clr-gray-400);
+      color: var(--clr-primary-500);
     }
 
     &--active{

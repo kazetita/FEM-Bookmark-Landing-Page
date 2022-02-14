@@ -27,18 +27,15 @@
 
     &:hover,
     &:focus {
-      background-color: var(--clr-gray-400);
+      color: var(--clr-primary-500);
     }
   }
 
   &__body {
     max-height: 0;
+    padding-block: 0;
     overflow: hidden;
-    transition: max-height 250ms ease-out;
-
-    > * {
-      padding: 10px;
-    }
+    transition: max-height 250ms ease-out, padding 250ms ease-out;
   }
 
 
@@ -52,8 +49,9 @@
       }
 
       .accordion__body {
+        padding-block: 10px;
         max-height: 1000px;
-        transition: max-height 250ms ease-in;
+        transition: max-height 250ms ease-in, padding 250ms ease-in;
       }
     }
   }
