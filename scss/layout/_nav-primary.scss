@@ -38,21 +38,12 @@
         border-top: 1px solid var(--clr-neutral-400);
       }
 
-      &__link.btn {
-        --btn-fs: 20px;
-        --btn-ls: 2.4px;
-        --btn-bg-clr: #fff;
-        padding-block: 0.2em;
-        margin-top: 26px;
-
-        &:hover,
-        &:focus {
-          --btn-bg-clr: var(--clr-primary-500);
-        }
+      &__link:not(.btn--login) {
+        padding-block: 15px;
       }
 
-      &__link:not(.btn) {
-        padding-block: 15px;
+      .btn--login {
+        margin-top: 26px;
       }
     }
 

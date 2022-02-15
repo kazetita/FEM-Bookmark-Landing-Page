@@ -8,7 +8,6 @@
   }
 
   &__desc {
-    // max-width: var(--text-max-width);
     margin-top: 10px;
     margin-inline: auto;
     text-align: center;
@@ -28,11 +27,6 @@
       margin-top: 11px;
     }
 
-    .btn {
-      --btn-fs: 14.5px;
-      --btn-ls: 0;
-      padding: 0.8em 1.6em;
-    }
   }
 
   @include mq("lg") {

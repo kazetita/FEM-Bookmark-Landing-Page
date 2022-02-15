@@ -10,16 +10,15 @@
   }
 
   &__input {
-    padding: 0.9em 1.4em;
+    padding: 0.8em 1.4em;
     border: none;
     border-radius: 5px;
     letter-spacing: 0.2px;
   }
 
   &__btn {
-    padding-block: 0.7em;
+    padding-block: 0.8;
     font-size: inherit;
-    letter-spacing: 0;
   }
 
   @include mq("lg") {
@@ -27,6 +26,7 @@
 
     &__group {
       flex-direction: row;
+      gap: 20px;
     }
 
     &__input {
@@ -35,7 +35,7 @@
     }
 
     &__btn {
-      padding-inline: 1.7em;
+      padding-inline: 1.4em;
     }
   }
 }

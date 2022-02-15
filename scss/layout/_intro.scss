@@ -11,14 +11,6 @@
     &__content {
       padding-top: 73px;
     }
-
-    &__cta {
-      .btn {
-        --btn-ls: 0;
-        --btn-fs: 15px;
-        padding: 0.7em 0.8em;
-      }
-    }
   }
 
   @include mq("lg") {
@@ -36,8 +28,7 @@
       }
 
       .btn {
-        --btn-fs: 14.5px;
-        padding-inline: 1.5em;
+        padding-inline: 1.6em;
       }
     }
   }

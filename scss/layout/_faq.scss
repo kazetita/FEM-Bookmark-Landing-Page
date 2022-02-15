@@ -2,7 +2,7 @@
 
 .faq {
   //as
-  margin-top: 139px;
+  margin-top: 136px;
 
   &__title {
     text-align: center;
@@ -18,12 +18,12 @@
     margin-top: 47px;
     text-align: center;
 
-    .btn {
-      --btn-fs: 15px;
-      --btn-ls: 0;
-      padding-block: 0.6em;
-      padding-inline: 1.4em;
-    }
+    // .btn {
+    //   --btn-fs: 15px;
+    //   --btn-ls: 0;
+    //   padding-block: 0.6em;
+    //   padding-inline: 1.4em;
+    // }
   }
 
   .accordion {
@@ -42,10 +42,10 @@
     &__cta {
       margin-top: 53px;
 
-      .btn {
-        --btn-fs: 14.5px;
-        padding: 0.8em 1.5em;
-      }
+      // .btn {
+      //   --btn-fs: 14.5px;
+      //   padding: 0.8em 1.5em;
+      // }
     }
 
     .accordion {
