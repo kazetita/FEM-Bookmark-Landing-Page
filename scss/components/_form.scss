@@ -1,19 +1,21 @@
 @use '../utils/mixins' as *;
 
 .form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
   font-size: 14px;
 
-  &__group {
-    display: flex;
-    flex-direction: column;
-    gap: 17px;
-  }
-
   &__input {
-    padding: 0.8em 1.4em;
+    width: 100%;
+    padding: 0.8em calc(1.4em + calc(var(--icon-error-width) / 2)) 0.8em 1.4em;
     border: none;
     border-radius: 5px;
     letter-spacing: 0.2px;
+
+    &:focus {
+      outline: 2px solid var(--clr-neutral-400);
+    }
   }
 
   &__btn {
@@ -21,16 +23,72 @@
     font-size: inherit;
   }
 
+  &__group {
+    --icon-error-width: 20px;
+    --icon-error-height: 20px;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &::before{
+      /* stylelint-disable-next-line*/
+      @util border-bottom-radius(5px);
+      content: attr(data-error-msg);
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: calc(100% - 2px);
+      padding: 0.4em 0.9em;
+      // padding-inline: 0.9em;
+      // padding-block: 0.4em;
+      border-radius: 5px;
+      font-size: 10.5px;
+      font-weight: var(--fw-bold);
+      font-style: italic;
+      background-color: var(--clr-primary-500);
+    }
+
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+      right: calc(var(--icon-error-width) / 2);
+      top: calc(50% - calc(var(--icon-error-height) / 2));
+      width: var(--icon-error-width);
+      height: var(--icon-error-height);
+      background-image: url('../images/icon-error.svg');
+    }
+
+    &--error {
+      margin-bottom: 20px;
+
+      &::before,
+      &::after {
+        display: block;
+      }
+
+      .form__input {
+        border: 2px solid var(--clr-primary-500);
+      }
+    }
+  }
+
   @include mq("lg") {
+    flex-direction: row;
+    gap: 20px;
     font-size: 14.5px;
 
     &__group {
-      flex-direction: row;
-      gap: 20px;
+      flex: 1;
+
+      &--error {
+        margin-bottom: 0;
+      }
     }
 
     &__input {
-      flex: 1;
+      height: 100%;
       letter-spacing: 0;
     }
 

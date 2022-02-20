@@ -704,9 +704,6 @@ h2 {
 }
 
 .form {
-  font-size: 0.875rem;
-}
-.form__group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -715,33 +712,94 @@ h2 {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 1.0625rem;
+  font-size: 0.875rem;
 }
 .form__input {
-  padding: 0.8em 1.4em;
+  width: 100%;
+  padding: 0.8em calc(1.4em + var(--icon-error-width) / 2) 0.8em 1.4em;
   border: none;
   border-radius: 0.3125rem;
   letter-spacing: 0.2px;
+}
+.form__input:focus {
+  outline: 0.125rem solid hsl(229, 8%, 60%);
+  outline: 0.125rem solid hsl(229, 8%, 60%);
+  outline: 0.125rem solid var(--clr-neutral-400);
 }
 .form__btn {
   padding-top: 0.8;
   padding-bottom: 0.8;
   font-size: inherit;
 }
+.form__group {
+  --icon-error-width: 1.25rem;
+  --icon-error-height: 1.25rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.form__group::before {
+  /* stylelint-disable-next-line*/
+  border-bottom-left-radius: 0.3125rem;
+  border-bottom-right-radius: 0.3125rem;
+  content: attr(data-error-msg);
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: calc(100% - 0.125rem);
+  padding: 0.4em 0.9em;
+  border-radius: 0.3125rem;
+  font-size: 0.65625rem;
+  font-weight: 500;
+  font-weight: var(--fw-bold);
+  font-style: italic;
+  background-color: hsl(0, 94%, 66%);
+  background-color: var(--clr-primary-500);
+}
+.form__group::after {
+  content: "";
+  display: none;
+  position: absolute;
+  right: calc(var(--icon-error-width) / 2);
+  top: calc(50% - var(--icon-error-height) / 2);
+  width: var(--icon-error-width);
+  height: var(--icon-error-height);
+  background-image: url("../images/icon-error.svg");
+}
+.form__group--error {
+  margin-bottom: 1.25rem;
+}
+.form__group--error::before, .form__group--error::after {
+  display: block;
+}
+.form__group--error .form__input {
+  border: 2px solid hsl(0, 94%, 66%);
+  border: 2px solid var(--clr-primary-500);
+}
 @media screen and (min-width: 64rem) {
   .form {
-    font-size: 0.90625rem;
-  }
-  .form__group {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
     gap: 1.25rem;
+    font-size: 0.90625rem;
   }
-  .form__input {
+  .form__group {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+  }
+  .form__group--error {
+    margin-bottom: 0;
+  }
+  .form__input {
+    height: 100%;
     letter-spacing: 0;
   }
   .form__btn {
@@ -797,6 +855,8 @@ h2 {
   z-index: var(--z-index-600);
 }
 .nav-primary__toggle {
+  position: relative;
+  top: -0.1875rem;
   width: 1.125rem;
   height: 0.9375rem;
   background-image: url("../images/icon-hamburger.svg");

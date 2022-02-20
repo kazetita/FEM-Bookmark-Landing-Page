@@ -8,6 +8,8 @@
   z-index: var(--z-index-600);
 
   &__toggle {
+    position: relative;
+    top: -3px;
     width: 18px;
     height: 15px;
     background-image: url('../images/icon-hamburger.svg');

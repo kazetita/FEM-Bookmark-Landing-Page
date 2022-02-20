@@ -53,3 +53,60 @@ const accordionItems = [... accordion.children];
 const handlerAccordionItemOnClick = e => e.currentTarget.classList.toggle('accordion__item--open');
 
 accordionItems.forEach(item => item.addEventListener('click', handlerAccordionItemOnClick));
+
+//FORM
+
+// Variables
+const formContact = document.querySelector('#form-contact');
+let timer;
+
+// General Functions
+const clearErrorOnField = function(form, fieldName) {
+  const field = form[fieldName];
+  if(!field) return null;
+  const formGroup = field.closest('.form__group');
+
+  return function() {
+    delete formGroup.dataset.errorMsg;
+    formGroup.classList.remove('form__group--error');
+  }
+};
+
+const setErrorOnField = function(form, fieldName) {
+  const field = form[fieldName];
+  if(!field) return null;
+  const formGroup = field.closest('.form__group');
+
+  return function(msg) {
+    formGroup.dataset.errorMsg = msg;
+    formGroup.classList.add('form__group--error');
+  }
+};
+
+// Event handlers
+const handlerFormOnSubmit = function(e) {
+  e.preventDefault();
+  
+  const email = this['email'];
+
+  if(email.validity.valueMissing) {
+    setErrorOnEmail('Email is required');
+    timer = setTimeout(() => clearErrorOnEmail(), 3000);
+  }
+
+  if(email.validity.typeMismatch) {
+    setErrorOnEmail('Whoops, make sure it\'s an email');
+    timer = setTimeout(() => clearErrorOnEmail(), 3000);
+  }
+}
+
+const handlerEmailOnFocus = function() {
+  clearTimeout(timer);
+  clearErrorOnEmail();
+};
+
+//main
+const clearErrorOnEmail = clearErrorOnField(formContact, 'email');
+const setErrorOnEmail = setErrorOnField(formContact, 'email');
+formContact.addEventListener('submit', handlerFormOnSubmit);
+formContact['email'].addEventListener('focus', handlerEmailOnFocus);
