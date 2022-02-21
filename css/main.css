@@ -1154,3 +1154,34 @@ h2 {
     margin-top: 2rem;
   }
 }
+
+.footer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 2.5625rem;
+  padding-bottom: 2.1875rem;
+  background-color: hsl(229, 31%, 21%);
+  background-color: var(--clr-neutral-500);
+}
+.footer .logo {
+  --logo-name-clr: #fff;
+}
+.footer .menu {
+  --menu-clr: #fff;
+  --menu-fs: 0.9375rem;
+  --menu-ls: 0.09375rem;
+  --menu-gap-items: 1.5rem;
+  margin-top: 1.6875rem;
+}
+.footer .socials {
+  margin-top: 2.5625rem;
+}
