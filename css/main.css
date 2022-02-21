@@ -1185,3 +1185,30 @@ h2 {
 .footer .socials {
   margin-top: 2.5625rem;
 }
+@media screen and (min-width: 64rem) {
+  .footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+  .footer .logo {
+    position: relative;
+    top: 0.1875rem;
+    margin-right: 3.6875rem;
+  }
+  .footer .menu {
+    --menu-fs: 0.8125rem;
+    --menu-gap-items: 2.75rem;
+    margin-top: 0;
+  }
+  .footer .socials {
+    margin-left: auto;
+    margin-top: 0;
+  }
+}

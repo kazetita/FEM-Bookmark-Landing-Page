@@ -1,3 +1,5 @@
+@use '../utils/mixins' as *;
+
 .footer {
   position: relative;
   display: flex;
@@ -20,5 +22,28 @@
 
   .socials {
     margin-top: 41px;
+  }
+
+  @include mq("lg") {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-block: 28px;
+
+    .logo{
+      position: relative;
+      top: 3px;
+      margin-right: 59px;
+    }
+
+    .menu {
+      --menu-fs: 13px;
+      --menu-gap-items: 44px;
+      margin-top: 0;
+    }
+
+    .socials {
+      margin-left: auto;
+      margin-top: 0;
+    }
   }
 }
