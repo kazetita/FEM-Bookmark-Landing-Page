@@ -15,10 +15,14 @@
 
   .tab-list {
     margin-top: 38px;
+
+    &__nav {
+      margin-inline: auto;
+      max-width: 735px;
+    }
   }
 
   .media {
-
     &__content {
       padding-top: 82px;
     }
@@ -26,7 +30,6 @@
     &__desc {
       margin-top: 11px;
     }
-
   }
 
   @include mq("lg") {
@@ -38,11 +41,6 @@
 
     .tab-list {
       margin-top: 45px;
-
-      &__nav {
-        width: 67%;
-        margin-inline: auto;
-      }
     }
 
     .media {
@@ -61,5 +59,36 @@
         margin-top: 34px;
       }
     }
+  }
+}
+
+#search-feature,
+#share-feature {
+  --bg-width: 150%;
+  --bg-height: 82%;
+  --bg-offset-bottom: max(-10%, -75px);
+}
+
+#bookmark-feature {
+  --bg-width: 150%;
+  --bg-offset-bottom: max(-18%, -75px);
+}
+
+#search-feature {
+  --bg-offset-right: 20%;
+}
+
+@include mq("lg") {
+  #bookmark-feature {
+    --bg-width: 150%;
+    --bg-offset-bottom: -25%;
+    --bg-offset-right: 13%;
+  }
+
+  #search-feature,
+  #share-feature {
+    --bg-width: 150%;
+    --bg-height: 100%;
+    --bg-offset-bottom: -12%;
   }
 }

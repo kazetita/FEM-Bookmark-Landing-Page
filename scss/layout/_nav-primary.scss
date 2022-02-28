@@ -2,10 +2,6 @@
 
 .nav-primary {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: var(--z-index-600);
 
   &__toggle {
     position: relative;
@@ -17,68 +13,82 @@
     all: unset;
     cursor: pointer;
 
-    &--open {
+    &[aria-expanded="true"] {
+      position: relative;
       width: 16px;
       height: 15px;
       background-image: url('../images/icon-close.svg');
     }
   }
 
-  .socials {
-    display: none;
+  &__menu {
+    margin-left: auto;
   }
 
   @include mq("lg", "max") {
-    .menu {
-      --menu-fs: 20px;
-      --menu-ls: 2.4px;
-      --menu-gap-items: 0;
-      --menu-clr: #fff;
-      margin-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: var(--z-index-900);
 
-      &__item {
-        border-top: 1px solid var(--clr-neutral-400);
-      }
+    &__menu {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 106px var(--padding-container) 20px;
+      visibility: hidden;
 
-      &__link:not(.btn--login) {
-        padding-block: 15px;
-      }
+      .menu {
+        --menu-fs: 20px;
+        --menu-ls: 2.4px;
+        --menu-gap-items: 0;
+        --menu-clr: #fff;
 
-      .btn--login {
-        margin-top: 26px;
-      }
-    }
+        &__item {
+          border-top: 1px solid var(--clr-neutral-400);
+        }
 
-    .socials {
-      display: block;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-    }
+        &__link:not(.btn--login) {
+          padding-block: 15px;
+        }
 
-    &__menu-wrapper{
-      display: none;
-      width: 100%;
-      height: max(calc(100vh - 110px), 500px);
-      position: absolute;
-      left:0;
-      top: 100%;
-
-      &--visible {
-        display: block;
-
-        &::before {
-          content: '';
-          position: fixed;
-          inset: 0;
-          z-index: -1;
-          background-color: var(--clr-neutral-500);
-          opacity: 0.95;
+        .btn--login {
+          margin-top: 26px;
         }
       }
 
-    } 
+      .socials {
+        align-self: center;
+      }
+
+    }
+
+    &::before {
+      content: '';
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      background-color: var(--clr-neutral-500);
+      opacity: 0.95;
+      transform: translateY(-100%);
+      transition: transform 200ms ease-out;
+    }
+
+    &--open {
+      .nav-primary__menu {
+        visibility: visible;
+        transition: visibility 100ms ease-in;
+        transition-delay: 100ms;
+      }
+
+      &::before {
+        transform: translateY(0);
+        transition: transform 200ms ease-in;
+      }
+    }
   }
 }

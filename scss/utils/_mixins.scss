@@ -12,6 +12,11 @@
   }
   
   $bp: map.get($breakpoints, $breakpoint);
+
+  @if $type == 'max' {
+    $bp: calc($bp - 1px);
+  }
+
   @media screen and (#{$type}-width: $bp) {
     @content;
   }

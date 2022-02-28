@@ -1,12 +1,27 @@
 // NAV
-const btnToggleNav = document.querySelector('.nav-primary__toggle');
-const menuWrapper = document.querySelector('.nav-primary__menu-wrapper');
-const logoNav = document.querySelector('.nav-primary .logo');
+// const btnToggleNav = document.querySelector('.nav-primary__toggle');
+// const menuWrapper = document.querySelector('.nav-primary__menu-wrapper');
+// const logoNav = document.querySelector('.nav-primary .logo');
+
+// const toggleMenu = function(e) {
+//   this.classList.toggle('nav-primary__toggle--open');
+//   menuWrapper.classList.toggle('nav-primary__menu-wrapper--visible');
+//   logoNav.classList.toggle('logo--light-on-sm');
+// };
+
+// btnToggleNav.addEventListener('click', toggleMenu);
+
+const mainNav = document.querySelector('.nav-primary');
+const btnToggleNav = mainNav.querySelector('.nav-primary__toggle');
+const menu = mainNav.querySelector('.nav-primary__menu');
+const logoNav = mainNav.querySelector('.logo');
+const isMenuOpen = () => mainNav.classList.contains('nav-primary--open');
 
 const toggleMenu = function(e) {
-  this.classList.toggle('nav-primary__toggle--open');
-  menuWrapper.classList.toggle('nav-primary__menu-wrapper--visible');
+  mainNav.classList.toggle('nav-primary--open');
   logoNav.classList.toggle('logo--light-on-sm');
+  document.body.classList.toggle('no-scroll');
+  this.setAttribute('aria-expanded', String(isMenuOpen()));
 };
 
 btnToggleNav.addEventListener('click', toggleMenu);

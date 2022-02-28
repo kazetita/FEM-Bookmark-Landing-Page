@@ -6,33 +6,36 @@
 
   &__img {
     position: relative;
+    align-self: center;
+    // display: flex;
+    // align-items: center;
 
     img {
       width: 100%;
       object-fit: cover;
     }
 
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   bottom: var(--bg-offset-bottom, -18%);
-    //   left: var(--bg-offset-left, 10%);
-    //   width: var(--bg-width, 100%);
-    //   height: var(--bg-height, 100%);
-    //   z-index: -1;
-    //   background-color: var(--clr-primary-400);
-    //   /* stylelint-disable-next-line */
-    //   @util border-left-radius(50rem);
-    // }
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: var(--bg-offset-bottom, -10%);
+      left: var(--bg-offset-left, 10%);
+      width: var(--bg-width, 100%);
+      height: var(--bg-height, 100%);
+      z-index: -1;
+      background-color: var(--clr-primary-400);
+      /* stylelint-disable-next-line */
+      @util border-left-radius(50rem);
+    }
 
-    // &--bg-ltr {
-    //   &::before {
-    //     left: auto;
-    //     right: var(--bg-offset-right, 10%);
-    //     bottom: var(--bg-offset-bottom, -18%);
-    //     transform: rotateY(180deg);
-    //   }
-    // }
+    &--bg-ltr {
+      &::before {
+        left: auto;
+        right: var(--bg-offset-right, 10%);
+        bottom: var(--bg-offset-bottom, -18%);
+        transform: rotateY(180deg);
+      }
+    }
   }
 
   &__content {

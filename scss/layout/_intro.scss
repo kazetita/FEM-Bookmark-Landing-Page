@@ -5,6 +5,10 @@
 
   .media {
     &__img {
+      --bg-width: 150%;
+      --bg-height: 82%;
+      --bg-offset-bottom: -4%;
+      --bg-offset-left: 17%;
       transform: scale(1.13);
     }
 
@@ -17,8 +21,12 @@
     margin-top: 72px;
 
     .media {
-
       &__img{
+        --bg-width: 150%;
+        --bg-height: 76%;
+        --bg-offset-bottom: -7%;
+        // --bg-offset-bottom: -30px;
+        --bg-offset-left: 30%;
         transform: scale(1.07) translateX(13%);
       }
 
