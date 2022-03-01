@@ -4,20 +4,31 @@
 //Variables
 const mainNav = document.querySelector(".nav-primary");
 const menu = mainNav.querySelector(".nav-primary__menu");
+const linksMenu = menu.querySelectorAll("a");
 const btnToggleNav = mainNav.querySelector(".nav-primary__toggle");
 
 // General Functions
 const isMenuOpen = () => mainNav.classList.contains("nav-primary--open");
+// const isLink = el =>gcc
 
 // Event Handlers
 const toggleMenu = function (e) {
   mainNav.classList.toggle("nav-primary--open");
   menu.setAttribute("aria-hidden", String(!isMenuOpen()));
-  this.setAttribute("aria-expanded", String(isMenuOpen()));
+  btnToggleNav.setAttribute("aria-expanded", String(isMenuOpen()));
+};
+
+const handlerMenuLinkOnClick = function (e) {
+  if (isMenuOpen()) {
+    toggleMenu();
+  }
 };
 
 // Main
 btnToggleNav.addEventListener("click", toggleMenu);
+linksMenu.forEach((link) =>
+  link.addEventListener("click", handlerMenuLinkOnClick)
+);
 
 /* ====== Tab List ====== */
 
