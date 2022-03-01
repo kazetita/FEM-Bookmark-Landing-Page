@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor](https://your-solution-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/bookmark-landing-page-using-bem-sassscss-postcss-qIiH-9746)
 - Live Site URL: [Preview](https://kazetita.github.io/FEM-Bookmark-Landing-Page/)
 
 ## My process
