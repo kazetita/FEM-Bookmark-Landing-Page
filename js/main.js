@@ -9,12 +9,10 @@ const btnToggleNav = mainNav.querySelector(".nav-primary__toggle");
 
 // General Functions
 const isMenuOpen = () => mainNav.classList.contains("nav-primary--open");
-// const isLink = el =>gcc
 
 // Event Handlers
 const toggleMenu = function (e) {
   mainNav.classList.toggle("nav-primary--open");
-  menu.setAttribute("aria-hidden", String(!isMenuOpen()));
   btnToggleNav.setAttribute("aria-expanded", String(isMenuOpen()));
 };
 
