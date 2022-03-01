@@ -1,8 +1,9 @@
-@use '../utils/mixins' as *;
+@use "../utils/mixins" as *;
 
 .header {
+  min-height: 113.5px;
   padding-block: 40px;
-  
+
   @include mq("lg") {
     padding-block: 52px;
   }

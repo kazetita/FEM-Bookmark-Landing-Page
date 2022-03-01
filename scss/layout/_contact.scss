@@ -1,4 +1,4 @@
-@use '../utils/mixins' as *;
+@use "../utils/mixins" as *;
 
 .contact {
   margin-top: 124px;
@@ -42,7 +42,7 @@
       margin-inline: auto;
       max-width: 22ch;
     }
-    
+
     .form {
       margin-top: 32px;
     }

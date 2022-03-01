@@ -1,4 +1,4 @@
-@use '../utils/mixins' as *;
+@use "../utils/mixins" as *;
 
 .footer {
   position: relative;
@@ -34,7 +34,7 @@
       flex-direction: row;
       justify-content: flex-start;
 
-      .logo{
+      .logo {
         position: relative;
         top: 3px;
         margin-right: 59px;

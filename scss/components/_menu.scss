@@ -1,4 +1,4 @@
-@use '../utils/mixins' as *;
+@use "../utils/mixins" as *;
 
 .menu {
   /* stylelint-disable-next-line */
@@ -11,7 +11,7 @@
   text-transform: uppercase;
 
   &__item {
-    width: 100%;  
+    width: 100%;
   }
 
   &__link {
@@ -23,7 +23,7 @@
     color: var(--menu-clr, var(--clr-neutral-500));
 
     &:hover,
-    &:focus{
+    &:focus {
       color: var(--menu-clr-hover, var(--clr-primary-500));
     }
   }

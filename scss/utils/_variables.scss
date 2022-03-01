@@ -2,5 +2,9 @@
   --max-width: 1440px;
   --min-width: 375px;
   --z-index-900: 999;
-  --padding-container: clamp(2rem, -1.0369718309859155rem + 12.957746478873238vw, 10.625rem);
+  --padding-container: clamp(
+    2rem,
+    -1.0369718309859155rem + 12.957746478873238vw,
+    10.625rem
+  );
 }

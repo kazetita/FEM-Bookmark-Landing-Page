@@ -1,4 +1,4 @@
-@use '../utils/mixins' as *;
+@use "../utils/mixins" as *;
 
 .sr-only {
   /* stylelint-disable-next-line */
@@ -7,16 +7,12 @@
 
 .sm-only {
   @include mq("lg") {
-    display: none!important;
+    display: none !important;
   }
 }
 
 .sm-hidden {
   @include mq("lg", "max") {
-    display: none!important;
+    display: none !important;
   }
-}
-
-.no-scroll {
-  overflow: hidden;
 }

@@ -1,19 +1,19 @@
-@use 'sass:map';
-@use 'sass:list';
-@use 'breakpoints' as *;
+@use "sass:map";
+@use "sass:list";
+@use "breakpoints" as *;
 
-@mixin mq($breakpoint, $type:'min') {
-  @if not list.index(('min', 'max'), $type) {
-    @error 'Property #{$type} must be min or max.'
+@mixin mq($breakpoint, $type: "min") {
+  @if not list.index(("min", "max"), $type) {
+    @error 'Property #{$type} must be min or max.';
   }
 
-  @if not map.has-key($breakpoints, $breakpoint){
-    @error 'Breakpoint #{$breakpoint} not supported.'
+  @if not map.has-key($breakpoints, $breakpoint) {
+    @error 'Breakpoint #{$breakpoint} not supported.';
   }
-  
+
   $bp: map.get($breakpoints, $breakpoint);
 
-  @if $type == 'max' {
+  @if $type == "max" {
     $bp: calc($bp - 1px);
   }
 

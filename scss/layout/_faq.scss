@@ -1,7 +1,6 @@
-@use '../utils/mixins' as *;
+@use "../utils/mixins" as *;
 
 .faq {
-  //as
   margin-top: 136px;
 
   &__title {
@@ -17,13 +16,6 @@
   &__cta {
     margin-top: 47px;
     text-align: center;
-
-    // .btn {
-    //   --btn-fs: 15px;
-    //   --btn-ls: 0;
-    //   padding-block: 0.6em;
-    //   padding-inline: 1.4em;
-    // }
   }
 
   .accordion {
@@ -41,11 +33,6 @@
 
     &__cta {
       margin-top: 53px;
-
-      // .btn {
-      //   --btn-fs: 14.5px;
-      //   padding: 0.8em 1.5em;
-      // }
     }
 
     .accordion {

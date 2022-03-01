@@ -1,4 +1,4 @@
-@use '../utils/mixins' as *;
+@use "../utils/mixins" as *;
 
 .card {
   --card-padding-inline: 25px;
@@ -6,7 +6,6 @@
   max-width: 280px;
   padding-inline: var(--card-padding-inline);
   border-radius: 8px;
-  // box-shadow: 0 4px 12px -5px var(--clr-neutral-400);
   box-shadow: 0 4px 14px -8px var(--clr-neutral-400);
   font-size: 15px;
 
@@ -38,13 +37,13 @@
     }
 
     &::before {
-      content: '';
+      content: "";
       width: calc(100% + calc(var(--card-padding-inline) * 2));
       height: 4px;
       position: absolute;
       left: calc(var(--card-padding-inline) * -1);
       top: 0;
-      background-image: url('../images/bg-dots.svg');
+      background-image: url("../images/bg-dots.svg");
     }
   }
 
@@ -66,4 +65,3 @@
     }
   }
 }
-

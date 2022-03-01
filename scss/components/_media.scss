@@ -7,8 +7,6 @@
   &__img {
     position: relative;
     align-self: center;
-    // display: flex;
-    // align-items: center;
 
     img {
       width: 100%;
@@ -20,7 +18,7 @@
       position: absolute;
       bottom: var(--bg-offset-bottom, -10%);
       left: var(--bg-offset-left, 10%);
-      width: var(--bg-width, 100%);
+      width: min(var(--bg-width, 100%), 700px);
       height: var(--bg-height, 100%);
       z-index: -1;
       background-color: var(--clr-primary-400);

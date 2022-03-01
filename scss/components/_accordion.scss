@@ -1,7 +1,6 @@
-@use '../utils/mixins' as *;
+@use "../utils/mixins" as *;
 
 .accordion {
-
   &__header {
     --arrow-width: 18px;
     --arrow-height: 12px;
@@ -14,14 +13,14 @@
     transition: background-color 250ms ease-in-out;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       right: 0;
       top: calc(50% - calc(var(--arrow-height) / 2));
       z-index: 1;
       height: var(--arrow-height);
       width: var(--arrow-width);
-      background-image: url('../images/icon-arrow.svg');
+      background-image: url("../images/icon-arrow.svg");
       transition: transform 250ms ease-in-out;
     }
 
@@ -38,9 +37,7 @@
     transition: max-height 150ms ease-out, padding 150ms ease-out;
   }
 
-
   &__item {
-
     &--open {
       .accordion__header {
         &::after {
