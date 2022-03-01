@@ -408,9 +408,9 @@ h2 {
   bottom: var(--bg-offset-bottom, -10%);
   left: 10%;
   left: var(--bg-offset-left, 10%);
-  width: min(100%, 43.75rem);
-  width: min(100%, 43.75rem);
-  width: min(var(--bg-width, 100%), 43.75rem);
+  width: min(100vw, 50rem);
+  width: min(100vw, 50rem);
+  width: min(var(--bg-width, 100vw), 50rem);
   height: 100%;
   height: var(--bg-height, 100%);
   z-index: -1;
@@ -661,23 +661,26 @@ h2 {
   }
 }
 
-.accordion__header {
+.accordion__toggle {
   --arrow-width: 1.125rem;
   --arrow-height: 0.75rem;
+  display: block;
   position: relative;
+  width: 100%;
   padding-top: 1.1625rem;
   padding-bottom: 1.1625rem;
+  padding-left: 0;
   padding-right: var(--arrow-width);
-  border-bottom: 0.0625rem solid hsl(0, 0%, 84%);
-  border-bottom: 0.0625rem solid hsl(0, 0%, 84%);
-  border-bottom: 0.0625rem solid var(--clr-gray-500);
+  border: none;
+  background-color: transparent;
   color: hsl(229, 31%, 21%);
   color: var(--clr-neutral-500);
+  text-align: left;
   cursor: pointer;
   -webkit-transition: background-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out;
 }
-.accordion__header::after {
+.accordion__toggle::after {
   content: "";
   position: absolute;
   right: 0;
@@ -691,7 +694,7 @@ h2 {
   transition: transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
 }
-.accordion__header:hover, .accordion__header:focus {
+.accordion__toggle:hover, .accordion__toggle:focus {
   color: hsl(0, 94%, 66%);
   color: var(--clr-primary-500);
 }
@@ -699,11 +702,20 @@ h2 {
   max-height: 0;
   padding-top: 0;
   padding-bottom: 0;
+  font-size: 1rem;
   overflow: hidden;
   -webkit-transition: max-height 150ms ease-out, padding 150ms ease-out;
   transition: max-height 150ms ease-out, padding 150ms ease-out;
 }
-.accordion__item--open .accordion__header::after {
+.accordion__body p {
+  max-width: none;
+}
+.accordion__item {
+  border-bottom: 0.0625rem solid hsl(0, 0%, 84%);
+  border-bottom: 0.0625rem solid hsl(0, 0%, 84%);
+  border-bottom: 0.0625rem solid var(--clr-gray-500);
+}
+.accordion__item--open .accordion__toggle::after {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
@@ -715,24 +727,19 @@ h2 {
   transition: max-height 150ms ease-in, padding 150ms ease-in;
 }
 @media screen and (min-width: 64rem) {
-  .accordion__header {
-    --header-pad-right: 1.75rem;
-    padding-right: calc(var(--arrow-width) + var(--header-pad-right));
-    padding-top: 1.1875rem;
-    padding-bottom: 1.1875rem;
-  }
-  .accordion__header::after {
-    right: var(--header-pad-right);
-  }
-  .accordion__header:first-child {
+  .accordion__item:first-child {
     border-top: 0.0625rem solid hsl(0, 0%, 84%);
     border-top: 0.0625rem solid hsl(0, 0%, 84%);
     border-top: 0.0625rem solid var(--clr-gray-500);
   }
-  .accordion__header:last-child {
-    border-bottom: 0.0625rem solid hsl(0, 0%, 84%);
-    border-bottom: 0.0625rem solid hsl(0, 0%, 84%);
-    border-bottom: 0.0625rem solid var(--clr-gray-500);
+  .accordion__toggle {
+    --toggle-pad-right: 1.75rem;
+    padding-right: calc(var(--arrow-width) + var(--toggle-pad-right));
+    padding-top: 1.1875rem;
+    padding-bottom: 1.1875rem;
+  }
+  .accordion__toggle::after {
+    right: var(--toggle-pad-right);
   }
 }
 
@@ -1017,7 +1024,6 @@ h2 {
   margin-top: 2.625rem;
 }
 .intro .media__img {
-  --bg-width: 150%;
   --bg-height: 82%;
   --bg-offset-bottom: -4%;
   --bg-offset-left: 17%;
@@ -1032,7 +1038,6 @@ h2 {
     margin-top: 4.5rem;
   }
   .intro .media__img {
-    --bg-width: 150%;
     --bg-height: 76%;
     --bg-offset-bottom: -7%;
     --bg-offset-left: 30%;
@@ -1106,13 +1111,11 @@ h2 {
 
 #search-feature,
 #share-feature {
-  --bg-width: 150%;
   --bg-height: 82%;
   --bg-offset-bottom: max(-10%, -4.6875rem);
 }
 
 #bookmark-feature {
-  --bg-width: 150%;
   --bg-offset-bottom: max(-18%, -4.6875rem);
 }
 
@@ -1122,14 +1125,12 @@ h2 {
 
 @media screen and (min-width: 64rem) {
   #bookmark-feature {
-    --bg-width: 150%;
     --bg-offset-bottom: -25%;
     --bg-offset-right: 13%;
   }
 
   #search-feature,
 #share-feature {
-    --bg-width: 150%;
     --bg-height: 100%;
     --bg-offset-bottom: -12%;
   }

@@ -1,4 +1,4 @@
-@use '../utils/mixins' as *;
+@use "../utils/mixins" as *;
 
 .features {
   margin-top: 150px;
@@ -64,13 +64,11 @@
 
 #search-feature,
 #share-feature {
-  --bg-width: 150%;
   --bg-height: 82%;
   --bg-offset-bottom: max(-10%, -75px);
 }
 
 #bookmark-feature {
-  --bg-width: 150%;
   --bg-offset-bottom: max(-18%, -75px);
 }
 
@@ -80,14 +78,12 @@
 
 @include mq("lg") {
   #bookmark-feature {
-    --bg-width: 150%;
     --bg-offset-bottom: -25%;
     --bg-offset-right: 13%;
   }
 
   #search-feature,
   #share-feature {
-    --bg-width: 150%;
     --bg-height: 100%;
     --bg-offset-bottom: -12%;
   }

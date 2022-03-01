@@ -1,14 +1,19 @@
 @use "../utils/mixins" as *;
 
 .accordion {
-  &__header {
+  &__toggle {
     --arrow-width: 18px;
     --arrow-height: 12px;
+    display: block;
     position: relative;
+    width: 100%;
     padding-block: 18.6px;
+    padding-left: 0;
     padding-right: var(--arrow-width);
-    border-bottom: 1px solid var(--clr-gray-500);
+    border: none;
+    background-color: transparent;
     color: var(--clr-neutral-500);
+    text-align: left;
     cursor: pointer;
     transition: background-color 250ms ease-in-out;
 
@@ -33,13 +38,20 @@
   &__body {
     max-height: 0;
     padding-block: 0;
+    font-size: 16px;
     overflow: hidden;
     transition: max-height 150ms ease-out, padding 150ms ease-out;
+
+    p {
+      max-width: none;
+    }
   }
 
   &__item {
+    border-bottom: 1px solid var(--clr-gray-500);
+
     &--open {
-      .accordion__header {
+      .accordion__toggle {
         &::after {
           transform: rotate(180deg);
         }
@@ -54,21 +66,17 @@
   }
 
   @include mq("lg") {
-    &__header {
-      --header-pad-right: 28px;
-      padding-right: calc(var(--arrow-width) + var(--header-pad-right));
+    &__item:first-child {
+      border-top: 1px solid var(--clr-gray-500);
+    }
+
+    &__toggle {
+      --toggle-pad-right: 28px;
+      padding-right: calc(var(--arrow-width) + var(--toggle-pad-right));
       padding-block: 19px;
 
       &::after {
-        right: var(--header-pad-right);
-      }
-
-      &:first-child {
-        border-top: 1px solid var(--clr-gray-500);
-      }
-
-      &:last-child {
-        border-bottom: 1px solid var(--clr-gray-500);
+        right: var(--toggle-pad-right);
       }
     }
   }

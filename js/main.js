@@ -1,20 +1,32 @@
-// NAV
+"use strict";
+/* ====== Primary Nav ====== */
+
+//Variables
 const mainNav = document.querySelector(".nav-primary");
+const menu = mainNav.querySelector(".nav-primary__menu");
 const btnToggleNav = mainNav.querySelector(".nav-primary__toggle");
 
+// General Functions
 const isMenuOpen = () => mainNav.classList.contains("nav-primary--open");
+
+// Event Handlers
 const toggleMenu = function (e) {
   mainNav.classList.toggle("nav-primary--open");
+  menu.setAttribute("aria-hidden", String(!isMenuOpen()));
   this.setAttribute("aria-expanded", String(isMenuOpen()));
 };
 
+// Main
 btnToggleNav.addEventListener("click", toggleMenu);
 
-// TAB LIST
+/* ====== Tab List ====== */
+
+// Variables
 const tabList = document.querySelector(".tab-list");
 const tabListNavItems = tabList.querySelectorAll(".tab-list__nav-item");
 let currentActiveNavItem = tabList.querySelector(".tab-list__nav-item--active");
 
+// General Functions
 const isTabActive = (tab) =>
   tab.classList.contains("tab-list__nav-item--active");
 const getTabItem = (tab) =>
@@ -36,6 +48,7 @@ const activeTab = function (tab) {
   tabItem.classList.add("tab-list__item--active");
 };
 
+// Event Handlers
 const handlerNavItemOnClick = function (e) {
   e.preventDefault();
   if (isTabActive(this)) return;
@@ -45,22 +58,41 @@ const handlerNavItemOnClick = function (e) {
   currentActiveNavItem = this;
 };
 
+// Main
 tabListNavItems.forEach((tab) =>
   tab.addEventListener("click", handlerNavItemOnClick)
 );
 
-//ACCORDION
+/* ====== Accordion ====== */
+
+// Variables
 const accordion = document.querySelector(".accordion");
 const accordionItems = [...accordion.children];
 
-const handlerAccordionItemOnClick = (e) =>
-  e.currentTarget.classList.toggle("accordion__item--open");
+// General Functions
+const getBodyItem = (item) => item.children[1];
+const getToggleItem = (item) => item.children[0];
+const isItemOpen = (item) => item.classList.contains("accordion__item--open");
+const isToggleItem = (el) => el.classList.contains("accordion__toggle");
+const toggleAccordionItem = function (item) {
+  item.classList.toggle("accordion__item--open");
+  getToggleItem(item).setAttribute("aria-expanded", isItemOpen(item));
+  getBodyItem(item).setAttribute("aria-hidden", !isItemOpen(item));
+};
 
+// Event Handlers
+const handlerAccordionItemOnClick = function (e) {
+  if (isToggleItem(e.target)) {
+    toggleAccordionItem(this);
+  }
+};
+
+// Main
 accordionItems.forEach((item) =>
   item.addEventListener("click", handlerAccordionItemOnClick)
 );
 
-//FORM
+/* ====== Form ====== */
 
 // Variables
 const formContact = document.querySelector("#form-contact");
@@ -111,7 +143,7 @@ const handlerEmailOnFocus = function () {
   clearErrorOnEmail();
 };
 
-//main
+// Main
 const clearErrorOnEmail = clearErrorOnField(formContact, "email");
 const setErrorOnEmail = setErrorOnField(formContact, "email");
 formContact.addEventListener("submit", handlerFormOnSubmit);

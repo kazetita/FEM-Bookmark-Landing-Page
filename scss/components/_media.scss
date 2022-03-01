@@ -1,4 +1,4 @@
-@use '../utils/mixins' as *;
+@use "../utils/mixins" as *;
 
 .media {
   display: flex;
@@ -14,11 +14,11 @@
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       bottom: var(--bg-offset-bottom, -10%);
       left: var(--bg-offset-left, 10%);
-      width: min(var(--bg-width, 100%), 700px);
+      width: min(var(--bg-width, 100vw), 800px);
       height: var(--bg-height, 100%);
       z-index: -1;
       background-color: var(--clr-primary-400);

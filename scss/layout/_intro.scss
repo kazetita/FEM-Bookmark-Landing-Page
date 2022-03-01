@@ -1,11 +1,10 @@
-@use '../utils/mixins' as *;
+@use "../utils/mixins" as *;
 
 .intro {
   margin-top: 42px;
 
   .media {
     &__img {
-      --bg-width: 150%;
       --bg-height: 82%;
       --bg-offset-bottom: -4%;
       --bg-offset-left: 17%;
@@ -21,8 +20,7 @@
     margin-top: 72px;
 
     .media {
-      &__img{
-        --bg-width: 150%;
+      &__img {
         --bg-height: 76%;
         --bg-offset-bottom: -7%;
         --bg-offset-left: 30%;

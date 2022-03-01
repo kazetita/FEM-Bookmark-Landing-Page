@@ -41,7 +41,7 @@
   <body>
     <!-- HEADER -->
     <header class="header">
-      <nav class="nav-primary container">
+      <nav class="nav-primary container" aria-label="primary">
         <a class="logo" href="#">
           <span class="sr-only">Bookmark</span>
           <svg width="148" height="25" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +68,7 @@
         >
           <span class="sr-only">Menu</span>
         </button>
-        <div class="nav-primary__menu" id="main-menu">
+        <div class="nav-primary__menu" id="main-menu" aria-hidden="true">
           <ul class="menu">
             <li class="menu__item">
               <a class="menu__link" href="#">Features</a>
@@ -306,10 +306,14 @@
         </p>
         <div class="accordion">
           <div class="accordion__item">
-            <div class="accordion__header">
-              <p>What is Bookmark?</p>
-            </div>
-            <div class="accordion__body">
+            <button
+              class="accordion__toggle"
+              aria-expanded="false"
+              aria-controls="faq-bookmark"
+            >
+              What is Bookmark?
+            </button>
+            <div class="accordion__body" id="faq-bookmark" aria-hidden="true">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
                 tincidunt justo eget ultricies fringilla. Phasellus blandit
@@ -319,10 +323,18 @@
           </div>
 
           <div class="accordion__item">
-            <div class="accordion__header">
-              <p>How can I request a new browser?</p>
-            </div>
-            <div class="accordion__body">
+            <button
+              class="accordion__toggle"
+              aria-expanded="false"
+              aria-controls="faq-new-browser"
+            >
+              How can I request a new browser?
+            </button>
+            <div
+              class="accordion__body"
+              id="faq-new-browser"
+              aria-hidden="true"
+            >
               <p>
                 Vivamus luctus eros aliquet convallis ultricies. Mauris augue
                 massa, ultricies non ligula. Suspendisse imperdiet. Vivamus
@@ -335,10 +347,14 @@
           </div>
 
           <div class="accordion__item">
-            <div class="accordion__header">
-              <p>Is there a mobile app?</p>
-            </div>
-            <div class="accordion__body">
+            <button
+              class="accordion__toggle"
+              aria-expanded="false"
+              aria-controls="faq-mobile-app"
+            >
+              Is there a mobile app?
+            </button>
+            <div class="accordion__body" id="faq-mobile-app" aria-hidden="true">
               <p>
                 Sed consectetur quam id neque fermentum accumsan. Praesent
                 luctus vestibulum dolor, ut condimentum urna vulputate eget.
@@ -349,10 +365,19 @@
           </div>
 
           <div class="accordion__item">
-            <div class="accordion__header">
-              <p>What about other Chromium browsers?</p>
-            </div>
-            <div class="accordion__body">
+            <button
+              class="accordion__toggle"
+              aria-expanded="false"
+              ,
+              aria-controls="faq-chromium-browser"
+            >
+              What about other Chromium browsers?
+            </button>
+            <div
+              class="accordion__body"
+              id="faq-chromium-browser"
+              aria-hidden="true"
+            >
               <p>
                 Integer condimentum ipsum id imperdiet finibus. Vivamus in
                 placerat mi, at euismod dui. Aliquam vitae neque eget nisl
@@ -374,6 +399,7 @@
         <h2 class="contact__title">Stay up-to-date with what we’re doing</h2>
         <form id="form-contact" class="form" novalidate>
           <div class="form__group">
+            <label class="sr-only" for="email">Email</label>
             <input
               class="form__input"
               id="email"
@@ -392,7 +418,7 @@
 
     <!-- FOOTER -->
     <footer class="footer container">
-      <nav class="footer__nav">
+      <nav class="footer__nav" aria-label="primary">
         <a class="logo" href="#">
           <span class="sr-only">Bookmark</span>
           <svg width="148" height="25" xmlns="http://www.w3.org/2000/svg">
