@@ -1,15 +1,9 @@
 .socials {
   /*stylelint-disable-next-line*/
   @util reset-list;
-
-  &__item {
-    display: inline-block;
-
-    + .socials__item {
-      margin-left: 38px;
-    }
-
-  }
+  display: flex;
+  align-items: baseline;
+  gap: 38px;
 
   &__icon {
     fill: #fff;
@@ -18,7 +12,7 @@
   &__link {
     display: block;
 
-    &:hover .socials__icon ,
+    &:hover .socials__icon,
     &:focus .socials__icon {
       fill: var(--clr-primary-500);
     }

@@ -71,13 +71,13 @@
         <div class="nav-primary__menu" id="main-menu" aria-hidden="true">
           <ul class="menu">
             <li class="menu__item">
-              <a class="menu__link" href="#">Features</a>
+              <a class="menu__link" href="#features">Features</a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">Pricing</a>
+              <a class="menu__link" href="#extensions">Pricing</a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">Contact</a>
+              <a class="menu__link" href="#contact">Contact</a>
             </li>
             <li class="menu__item">
               <a class="menu__link btn btn--danger btn--login" href="#"
@@ -141,7 +141,7 @@
       <!-- END INTRO SECTION -->
 
       <!-- FEATURES SECTION -->
-      <section class="features container">
+      <section class="features container" id="features">
         <h2 class="features__title">Features</h2>
         <p class="features__desc">
           Our aim is to make it quick and easy for you to access your favourite
@@ -242,7 +242,7 @@
       <!-- END FEATURES SECTION -->
 
       <!-- EXTENSION SECTION -->
-      <section class="extensions container">
+      <section class="extensions container" id="extensions">
         <h2 class="extensions__title">Download the extension</h2>
         <p class="extensions__desc">
           We’ve got more browsers in the pipeline. Please do let us know if
@@ -266,7 +266,7 @@
 
           <div class="card">
             <div class="card__img">
-              <img src="images/logo-firefox.svg" alt="Firefox" laoding="lazy" />
+              <img src="images/logo-firefox.svg" alt="Firefox" />
             </div>
             <div class="card__content">
               <p class="card__title">Add to Firefox</p>
@@ -368,7 +368,6 @@
             <button
               class="accordion__toggle"
               aria-expanded="false"
-              ,
               aria-controls="faq-chromium-browser"
             >
               What about other Chromium browsers?
@@ -394,7 +393,7 @@
       <!-- END FAQ SECTION -->
 
       <!-- CONTACT SECTION -->
-      <section class="contact container">
+      <section class="contact container" id="contact">
         <p class="contact__subtitle">35,000+ already joined</p>
         <h2 class="contact__title">Stay up-to-date with what we’re doing</h2>
         <form id="form-contact" class="form" novalidate>
@@ -440,10 +439,14 @@
         </a>
         <ul class="menu">
           <li class="menu__item">
-            <a class="menu__link" href="#">Features</a>
+            <a class="menu__link" href="#features">Features</a>
           </li>
-          <li class="menu__item"><a class="menu__link" href="#">Pricing</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+          <li class="menu__item">
+            <a class="menu__link" href="#extensions">Pricing</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#contact">Contact</a>
+          </li>
         </ul>
 
         <ul class="socials">
